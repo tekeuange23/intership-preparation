@@ -1,6 +1,8 @@
-// create a function which take a string in params and
-// returns the reversed string associated
-// reverse("Hello world!") --> "!dlrow olleH"
+/**
+ * @Exercise : create a function which take a string in params and returns the reversed string associated
+ * @Example  : reverse("Hello world!") --> "!dlrow olleH"
+ */
+
 
 const isBadInput = str => typeof(str) !== 'string';
 
@@ -11,13 +13,13 @@ const permute = (a, b) => {
 }
 
 
-/********************************************************************* */
-// reverse1 ("str")
-// ['s', 't', 'r']
-// iterate 02 times with 02 pointer this array 
-// TIME : O(n^2) == quadratic complexity
-// SPACE: O(1)   == constant
-/********************************************************************* */
+/** ****************************************************************************************************
+ * iterate 02 times with 02 pointer this array :: @PASCAL @TRIANGLE
+ * @TIME_COMPLEXITY  :: O(n^2) == quadratic complexity
+ * @SPACE_COMPLEXITY :: O(1)   == constant
+ * @param {*} str 
+ * @returns 
+ */
 function reverse1(str) {
   if (isBadInput(str)) {
     console.log("Bad input ::");
@@ -40,20 +42,17 @@ function reverse1(str) {
   return arrayStr.join('');
 }
 
-
-
-/********************************************************************* */
-// reverse2 ("str")
-// ['s', 't', 'r']
-// create a temp array 
-// iterate just on time the array
-// TIME : O(n) == linear
-// -- the used data structure (pref. linear DS like linkedList or Array) 
-// -- will provide us with 02 methods which are:
-// -- 1. remove-at-the-end() :: pop() in js arrays     --> O(1)
-// -- 2. add-ad-the-end()    :: push() in js arrays    --> O(1)
-// SPACE: O(n) == linear
-/********************************************************************* */
+/** ****************************************************************************************************
+ * create a temp array and iterate just one time the array
+ * @TIME_COMPLEXITY  :: O(n) == linear
+ * -- the used data structure (pref. linear DS like linkedList or Array) 
+ * -- will provide us with 02 methods which are:
+ * -- 1. remove-at-the-end() :: pop() in js arrays     --> O(1)
+ * -- 2. add-ad-the-end()    :: push() in js arrays    --> O(1)
+ * @SPACE_COMPLEXITY :: O(n) == linear
+ * @param {*} str 
+ * @returns 
+ */
 function reverse2(str) {
   if (isBadInput(str)) {
     console.log("Bad input ::");
@@ -69,17 +68,11 @@ function reverse2(str) {
   return temp.join('');
 }
 
-/********************************************************************* */
-function reverse3(str) {
-  if (isBadInput(str)) {
-    console.log("Bad input ::");
-    return str;
-  }
+/******************************************************************************************************/
+const reverse3 = (str) => str.split('').reverse().join('');
 
-  return str.split('').reverse().join('');
-}
-/********************************************************************* */
 
+/***************************************     MAIN     *************************************************/
 console.log(reverse1());
 console.log(reverse1(10));
 console.log(reverse1({length: 100}));

@@ -1,26 +1,30 @@
-// this['scope'] = "gobal";
+/**
+ * @GOAl : this vs process
+ */
 
-// const foo = () => {
-//   console.log(this);
-// }
-// function bar() {
-//   console.log(this);
-// }
-// class Foo{
-//   name = "ange";
-//   age = 23;
+/******************************************************************************************************/
+this['scope'] = "gobal";
 
-//   getThis() {
-//     console.log(this);
-//   }
-// }
+const foo = () => {
+  console.log(this);
+}
 
+function bar() {
+  console.log(this);
+}
 
-// console.log(this);
-// foo();
-// bar();
-// new Foo().getThis();
+class Foo{
+  name = "ange";
+  age = 23;
 
+  getThis() {
+    console.log(this);
+  }
+}
 
-
+/***************************************     MAIN     *************************************************/
+console.log(this);
+foo();
+bar();
+new Foo().getThis();
 console.log(process);

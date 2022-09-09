@@ -1,5 +1,9 @@
-// An array in JS is just an object with integer index
+/**
+ * @Exercise : Redefine Build-in Array class to Arr
+ * @Example  : An array in JS is just an object with integer index
+ */
 
+/******************************************************************************************************/
 class Arr{
   constructor(){
     this.length = 0;
@@ -51,7 +55,7 @@ class Arr{
   }
 }
 
-// const array = new Arr(1, 'node', { name: "ange" });
+/***************************************     MAIN     *************************************************/
 const array = new Arr("how", "are", "you", "?");
 array.toString();
 console.log(array.get(1));
