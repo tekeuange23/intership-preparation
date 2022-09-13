@@ -15,7 +15,7 @@ const add = (arr, elt) => {
  * -- the used data structure (pref. linear DS like linkedList or Array) 
  * -- will provide us with 02 methods which are:
  * -- 1. take part of an array :: slice() in js arrays     --> O(n)
- * -- 2. add-ad-the-end()      :: push() in js arrays      --> O(1)
+ * -- 2. add-ad-the-end()      :: push() in js arrays      --> O(n)
  * @SPACE_COMPLEXITY ::  O(1)   == constant
  * @returns 
  */
@@ -43,12 +43,12 @@ function mergeSortedArrayRecursive(arr1, arr2) {
 
 /******************************************************************************************************/
 /**
- * @TIME_COMPLEXITY :: O(n) == linear
+ * @TIME_COMPLEXITY :: O(n) == linear   ---   but can be turned to O(n^2) due to push() method
  * create an accumulator array and iterate just on time the arrays with two pointers
  * -- the used data structure (pref. linear DS like linkedList or Array) 
  * -- will provide us with 02 methods which are:
  * -- 1. remove-at-the-end() :: pop() in js arrays     --> O(1)
- * -- 2. add-ad-the-end()    :: push() in js arrays    --> O(1)
+ * -- 2. add-ad-the-end()    :: push() in js arrays    --> O(n)
  * @SPACE_COMPLEXITY :: O(n) == linear
  * @returns 
  */
@@ -85,4 +85,5 @@ function mergeSortedArrayIt(arr1, arr2) {
 /***************************************     MAIN     *************************************************/
 console.log(mergeSortedArrayRecursive([0,3,4,31], [4,6,30]));
 console.log(mergeSortedArrayIt([0,3,4,31], [4,6,30]));
-console.log(mergeSortedArrayIt([0, 0, 0, 0, 0,0,0], [0, 0, 0, 0]));
+console.log(mergeSortedArrayIt([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0]));
+console.log(mergeSortedArrayIt([0, 0,], []));

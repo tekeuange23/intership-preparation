@@ -15,7 +15,7 @@ function bar() {
 
 class Foo{
   name = "ange";
-  age = 23;
+  age = 20;
 
   getThis() {
     console.log(this);

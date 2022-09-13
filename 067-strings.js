@@ -44,11 +44,11 @@ function reverse1(str) {
 
 /** ****************************************************************************************************
  * create a temp array and iterate just one time the array
- * @TIME_COMPLEXITY  :: O(n) == linear
+ * @TIME_COMPLEXITY  :: O(n) == linear with linkedList   ---   O(n^2) == quadratic with arrays
  * -- the used data structure (pref. linear DS like linkedList or Array) 
  * -- will provide us with 02 methods which are:
  * -- 1. remove-at-the-end() :: pop() in js arrays     --> O(1)
- * -- 2. add-ad-the-end()    :: push() in js arrays    --> O(1)
+ * -- 2. add-ad-the-end()    :: push() in js arrays    --> O(n)
  * @SPACE_COMPLEXITY :: O(n) == linear
  * @param {*} str 
  * @returns 

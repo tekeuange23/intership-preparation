@@ -1,8 +1,8 @@
 // const users = [
-//   {name: "ange", age: 23},
-//   {name: "winnie", age: 32}
+//   {name: "ange", age: 20},
+//   {name: "winnie", age: 25}
 // ];
-const users = new Array(10_000_000).fill({name: "ange", age: 23});
+const users = new Array(10_000_000).fill({name: "ange", age: 20});
 users.push({name: "winnie", age: 32});
 
 function findByName(userList, name){
