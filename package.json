@@ -1,0 +1,26 @@
+{
+  "name": "meta-internship-preparation",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "meta-intership-preparation",
+  "main": "000-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tekeuange23/meta-intership-preparation.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "algorithms",
+    "data-structure"
+  ],
+  "author": "Ange",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tekeuange23/meta-intership-preparation/issues"
+  },
+  "homepage": "https://github.com/tekeuange23/meta-intership-preparation#readme"
+}

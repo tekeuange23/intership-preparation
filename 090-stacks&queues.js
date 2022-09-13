@@ -5,12 +5,3 @@
  * 
  * @linkedLists are also better than @queue owing to the constant time execution of @remove_top & @append
  */
-
-/******************************************************************************************************/
-
-/***************************************     MAIN     *************************************************/
-console.log(1);
-setTimeout(() => {
-  console.log(2);
-}, 2000);
-console.log(3);
