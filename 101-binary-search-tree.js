@@ -22,28 +22,26 @@ class BinarySearchTree{
 
     if(!this.root) {
       this.root = node;
-      return;
+      return this;
     }
 
     let ptr = this.root;
     while(true){
       if(value <= ptr.value) {
-        if(ptr.left){
-          ptr = ptr.left;
-        } 
-        else {
+        if(!ptr.left) {
           ptr.left = node;
-          return;
-        }
+          return this;
+        } 
+
+        ptr = ptr.left;
       } 
       else {
-        if(ptr.right){
-          ptr = ptr.right;
-        } 
-        else {
+        if(!ptr.right) {
           ptr.right = node;
-          return;
-        }
+          return this;
+        } 
+
+        ptr = ptr.right;
       }
     }
   }
@@ -69,6 +67,10 @@ class BinarySearchTree{
     
     return false;
   }
+
+  remove(value) {
+    
+  }
 }
 
 
@@ -80,7 +82,6 @@ function lookupRecusive(bst, value) {}
 /***************************************     MAIN     *************************************************/
 const bst = new BinarySearchTree();
 /**
- *
  *                             10
  *                     ,_______||_______,    
  *                     5               15
