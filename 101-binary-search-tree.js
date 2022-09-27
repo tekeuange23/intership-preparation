@@ -69,7 +69,60 @@ class BinarySearchTree{
   }
 
   remove(value) {
+    // empty tree
+    if(!this.root) {
+      return false;
+    }
     
+    // something in
+    let ptr = this.root;
+    while(true){
+      if(value < ptr.value) {
+        if(!ptr.left) {
+          return false;
+        } 
+
+        ptr = ptr.left;
+      } 
+      else if(value > ptr.value) {
+        if(!ptr.right) {
+          return false;
+        } 
+
+        ptr = ptr.right;
+      }
+      else {
+        const replacementNode = this.getReplacementNode(ptr);
+        console.log(replacementNode);
+        if(!replacementNode) {
+          // delete ptr;
+          ptr = null;
+          return true;
+        }
+        else {
+          replacementNode.left = ptr.left;
+          replacementNode.right = ptr.right;
+          ptr = replacementNode;
+          return true;
+        }
+      }
+    }
+  }
+
+  getReplacementNode(node) {
+    const ptr = node.right;
+    if(!ptr) {
+      return node.left;
+    }
+
+    let cutLastLink = null;
+    while(ptr?.left) {
+      cutLastLink = ptr;
+      ptr = ptr.left;
+    }
+    
+    cutLastLink = null;
+    return ptr;
   }
 }
 
@@ -77,6 +130,17 @@ class BinarySearchTree{
 /******************************************************************************************************/
 function insertRecusive(bst, value) {}
 function lookupRecusive(bst, value) {}
+function print(root) {
+  if(!root){
+    // process.stdout.write(`\n`);
+  } 
+  else {
+    // process.stdout.write(`${root.value} - `);
+    console.log(`${root.value} - `);
+    print(root.left);
+    print(root.right);
+  }
+}
 
 
 /***************************************     MAIN     *************************************************/
@@ -94,5 +158,9 @@ const bst = new BinarySearchTree();
   bst.insert(elt);
 });
 
-console.log(JSON.stringify(bst, null, 2));
+// console.log(JSON.stringify(bst, null, 2));
+print(bst.root);
 console.log(bst.lookup(2));
+console.log(bst.remove(5));
+print(bst.root);
+// console.log(JSON.stringify(bst, null, 2));
